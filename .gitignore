@@ -4,3 +4,4 @@
 *.iws
 target/
 *.un~
+out/
