@@ -1,5 +1,6 @@
-# 生成图片验证码
 # -*- coding: utf-8 -*-
+# 生成图片验证码
+
 __author__ = 'Administrator'
 
 from PIL import Image, ImageDraw, ImageFont,ImageFilter

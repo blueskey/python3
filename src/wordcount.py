@@ -1,5 +1,6 @@
-# 任一个英文的纯文本文件，统计其中的单词出现的个数
 # -*- coding: utf-8 -*-
+# 任一个英文的纯文本文件，统计其中的单词出现的个数
+
 __author__ = 'Administrator'
 
 import os
