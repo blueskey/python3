@@ -6,28 +6,29 @@ __author__ = 'Administrator'
 import re;
 import os;
 
+
 def initWords():
-    words= list()
-    with open("filtered_words.txt","r") as f:
+    words = list()
+    with open("filtered_words.txt", "r") as f:
         for line in f:
-            aline=re.findall(r'\w+',line)
+            aline = re.findall(r'\w+', line)
             for senceWords in aline:
-                wList=senceWords.strip().split()
+                wList = senceWords.strip().split()
                 for _w in wList:
-                        words.insert(len(words),_w)
+                    words.insert(len(words), _w)
     return words
 
-if __name__=="__main__":
-    text=input("请输入语句:")
-    words=initWords()
-    flag=1
+
+if __name__ == "__main__":
+    text = input("请输入语句:")
+    words = initWords()
+    flag = 1
     for word in words:
-        if(word in text):
+        if (word in text):
             print("有敏感哦！")
-            text=text.replace(word,(len(word)*"*"))
-            flag=0
-    if(flag):
+            text = text.replace(word, (len(word) * "*"))
+            flag = 0
+    if (flag):
         print("没有敏感词！")
     else:
-        print("处理后的语句："+text)
-
+        print("处理后的语句：" + text)
