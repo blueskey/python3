@@ -29,6 +29,7 @@ def getConfig(section, key):
     config.read(path)
     return config.get(section, key)
 
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -77,7 +78,7 @@ def hello(name=None):
     return render_template('hello.html', name=name)
 
 
-ALLOWED_EXTENSIONS =set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
 def allowed_file(filename):
@@ -106,15 +107,13 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            file.save(os.path.join(getConfig('DEFAULT','UPLOAD_FOLDER'), filename))
-            return "上传成功，请到文件夹"+getConfig('DEFAULT','UPLOAD_FOLDER')+"下查看！"
+            file.save(os.path.join(getConfig('DEFAULT', 'UPLOAD_FOLDER'), filename))
+            return "上传成功，请到文件夹" + getConfig('DEFAULT', 'UPLOAD_FOLDER') + "下查看！"
 
         else:
             return "文件格式不支持"
 
     return 'fail'
-
-
 
 # 放最后
 if __name__ == "__main__":
